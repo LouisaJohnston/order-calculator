@@ -1,1 +1,1 @@
-# order-total-calculator
+# order-calculator
