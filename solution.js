@@ -10,7 +10,7 @@ const findTotals = (orderItems, orderTax) => {
         let order = orderItems[i];
         let orderPrice = order.price * .01;
         subtotal += orderPrice * order.quantity;
-        if (order.taxable === true) {
+        if (order.taxable) {
             taxableTotal += orderPrice * order.quantity;
         }
     }
