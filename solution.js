@@ -7,7 +7,7 @@ const findTotals = (orderItems, orderTax) => {
     let subtotal = 0;
     let taxableTotal = 0;
     for (i = 0; i < orderItems.length; i++) {
-        let order = orderItems[i]
+        let order = orderItems[i];
         let orderPrice = order.price * .01;
         subtotal += orderPrice * order.quantity;
         if (order.taxable === true) {
@@ -36,7 +36,7 @@ async function fetchOrder() {
                 'Customer Name:', orderCustomer, '\n',
                 'Subtotal:', orderSubtotal, '\n',
                 'Taxes:', orderTaxes, '\n',
-                'Total:', orderTotal)
+                'Total:', orderTotal);
 }
 
-fetchOrder()
+fetchOrder();
