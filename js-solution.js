@@ -15,7 +15,8 @@ const findTotals = (orderItems, orderTax) => {
     })
     
     finalSubtotal = subtotal.toFixed(2);
-    const newTotal = (taxableTotal * orderTax) + taxableTotal; 
+    const newTotal = (taxableTotal * orderTax) + subtotal; 
+    console.log(taxableTotal)
     finalTotal = newTotal.toFixed(2);
 }
 
