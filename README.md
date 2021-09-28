@@ -7,8 +7,17 @@ To run, npm install the node-fetch dependency by entering the following into you
 npm i node-fetch
 ```
 
-Then, enter the following into your terminal with the placeholder text updated to reflect the desired order number: 
+Then, enter the following into your terminal with the placeholder text updated to reflect the desired order id (example ids: sfg47, sfg34, or dub49): 
 ```
 node solution.js PLACEHOLDER
+```
+
+In your terminal, the order details should be displayed like this:
+```
+Order: sfg47 
+Customer Name: Johnny Cueto 
+Subtotal: 9.98 
+Taxes: 0.72 
+Total: 10.70
 ```
 

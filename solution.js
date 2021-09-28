@@ -6,14 +6,14 @@ let finalTotal = 0;
 const findTotals = (orderItems, orderTax) => {
     let subtotal = 0;
     let taxableTotal = 0;
-    for (i = 0; i < orderItems.length; i++) {
-        let order = orderItems[i];
-        let orderPrice = order.price * .01;
-        subtotal += orderPrice * order.quantity;
-        if (order.taxable) {
-            taxableTotal += orderPrice * order.quantity;
+    orderItems.forEach((item) => {
+        let orderPrice = item.price * .01;
+        subtotal += orderPrice * item.quantity;
+        if (item.taxable) {
+            taxableTotal += orderPrice * item.quantity;
         }
-    }
+    })
+    
     finalSubtotal = subtotal.toFixed(2);
     const newTotal = (taxableTotal * orderTax) + taxableTotal; 
     finalTotal = newTotal.toFixed(2);
