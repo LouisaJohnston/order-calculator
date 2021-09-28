@@ -1,8 +1,35 @@
 # Order-Calculator
+Use CLI arguments to fetch the order ID, customer name, order subtotal, taxes related to the customer shipping address, and order total for any order in this third-party API: https://code-challenge-i2hz6ik37a-uc.a.run.app/docs. Solutions are provided using either Python or JavaScript.  
 
-A JavaScript project using CLI arguments to fetch the order ID, customer name, order subtotal, taxes related to the customer shipping address, and order total for any order in this third-party API: https://code-challenge-i2hz6ik37a-uc.a.run.app/docs
 
-To run, npm install the node-fetch dependency by entering the following into your terminal:
+## Python Instructions
+To run, pip install requests by entering the following into your terminal:
+```
+pip install requests
+```
+
+Then, navigate to pythonSolution.py in the project directory and run the code. In the terminal, you will be prompted with the following:
+```
+Please enter an order id:
+```
+
+In your terminal, enter an order id (example ids: sfg47, sfg34, or dub49).
+
+After hitting 'enter', the order details should be displayed like this:
+```
+Please enter an order id:
+sfg47
+
+ Order: sfg47
+ Customer Name: Johnny Cueto
+ Subtotal: 9.98
+ Taxes: 0.72
+ Total: 10.70
+```  
+
+## JavaScript Instructions
+
+To run, npm install node-fetch by entering the following into your terminal:
 ```
 npm i node-fetch
 ```
