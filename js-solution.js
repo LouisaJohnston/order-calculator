@@ -27,9 +27,9 @@ async function fetchOrder() {
     const orderName = orderJson.id; 
     const orderCustomer = orderJson.shipping_name;
     const orderItems = orderJson.order_items;
-    const orderTax = taxJson.tax_rate * .01;
-    const orderTaxes = (orderTax * 10).toFixed(2);
-    findTotals(orderItems, orderTax);
+    const orderTaxRate = taxJson.tax_rate * .01;
+    const orderTaxes = (orderTaxRate * 10).toFixed(2);
+    findTotals(orderItems, orderTaxRate);
     const orderSubtotal = finalSubtotal;
     const orderTotal = finalTotal;
     console.log('\n', 'Order:', orderName, '\n', 
