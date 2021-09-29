@@ -1,16 +1,16 @@
 const fetch = require("node-fetch");
 
-let subtotal = 0;
-let taxes = 0;
+let orderSubtotal = 0;
+let orderTaxes = 0;
 
 const findTotals = (orderItems, orderTaxRate) => {
   let taxableTotal = 0;
   orderItems.forEach((item) => {
     let orderPrice = item.price * 0.01;
-    subtotal += orderPrice * item.quantity;
+    orderSubtotal += orderPrice * item.quantity;
     if (item.taxable) {
       taxableTotal += orderPrice * item.quantity;
-      taxes = taxableTotal * orderTaxRate;
+      orderTaxes = taxableTotal * orderTaxRate;
     }
   });
 };
@@ -29,9 +29,7 @@ async function fetchOrder() {
   const orderItems = orderJson.order_items;
   const orderTaxRate = taxJson.tax_rate * 0.01;
   findTotals(orderItems, orderTaxRate);
-  const orderSubtotal = subtotal;
-  const orderTaxes = taxes;
-  const orderTotal = subtotal + orderTaxes;
+  const orderTotal = orderSubtotal + orderTaxes;
   console.log(
     `\nOrder: ${orderName}\nCustomer Name: ${orderCustomer}\nSubtotal: ${orderSubtotal.toFixed(2)}\nTaxes: ${orderTaxes.toFixed(2)}\nTotal: ${orderTotal.toFixed(2)}`
   );
